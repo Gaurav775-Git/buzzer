@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-black: #0a0a0a;
+  --red-primary: #e63946;
+  --red-light: #ff4d4d;
+  --text-white: #ffffff;
+  --line: rgba(230, 57, 70, 0.2);
+  --line-strong: rgba(230, 57, 70, 0.6);
+  --panel: rgba(10, 10, 10, 0.88);
+  --gold: #ffd700;
+  --silver: #c0c0c0;
+  --bronze: #cd7f32;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: var(--bg-black);
+  color: var(--text-white);
+}
+
+button,
+input {
+  font-family: inherit;
+}
