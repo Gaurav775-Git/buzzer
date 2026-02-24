@@ -3,10 +3,14 @@ import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import { io } from 'socket.io-client';
 import './App.css';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'https://buzzer-hl85.onrender.com';
+const PROD_API_FALLBACK = 'https://buzzer-hl85.onrender.com';
+const rawApiBase = (import.meta.env.VITE_API_URL || '').trim();
+const isLocalUrl = /localhost|127\.0\.0\.1/.test(rawApiBase);
+const API_BASE = (import.meta.env.PROD && isLocalUrl ? PROD_API_FALLBACK : (rawApiBase || PROD_API_FALLBACK)).replace(/\/+$/, '');
 
 const socket = io(API_BASE, {
   autoConnect: false,
+  transports: ['websocket'],
 });
 
 const formatTimestamp = (timestamp) => {
