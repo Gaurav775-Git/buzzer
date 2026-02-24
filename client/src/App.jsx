@@ -3,7 +3,7 @@ import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import { io } from 'socket.io-client';
 import './App.css';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://buzzer-hl85.onrender.com';
 
 const socket = io(API_BASE, {
   autoConnect: false,
